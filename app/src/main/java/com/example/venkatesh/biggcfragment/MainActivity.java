@@ -20,6 +20,8 @@ import android.view.MenuItem;
 import com.example.venkatesh.biggcfragment.Fragments.CategoryFragment;
 import com.example.venkatesh.biggcfragment.Fragments.Homefragment;
 import com.example.venkatesh.biggcfragment.Fragments.MobilesFragment;
+import com.example.venkatesh.biggcfragment.Fragments.OrdersFragment;
+import com.example.venkatesh.biggcfragment.Fragments.WishListFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -96,19 +98,70 @@ public class MainActivity extends AppCompatActivity
         {
             addNextFragment(false);
         }
-        if(id==R.id.shopbycategory)
+        else if(id==R.id.shopbycategory)
         {
            moveshopbycategory(false);
         }
-         else if (id == R.id.nav_share) {
+        else if(id==R.id.yourorders)
+        {
+            moveordersfragment(false,new OrdersFragment());
+        }
+        else if(id==R.id.yourwisilist)
+        {
+            movewishlistfragment(false,new WishListFragment());
+        }
 
-        } else if (id == R.id.nav_send) {
+        else if (id == R.id.nav_share) {
 
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void movewishlistfragment(boolean overlap, WishListFragment cat) {
+        Slide slideTransition = new Slide(Gravity.RIGHT);
+        Slide slidetransition=new Slide(Gravity.START);
+        slideTransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
+
+        slidetransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
+
+
+        ChangeBounds changeBoundsTransition = new ChangeBounds();
+        //  changeBoundsTransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
+
+        cat.setEnterTransition(slideTransition);
+        cat.setAllowEnterTransitionOverlap(overlap);
+        cat.setExitTransition(slidetransition);
+        cat.setSharedElementEnterTransition(changeBoundsTransition);
+
+        getFragmentManager().beginTransaction()
+                .replace(R.id.Main, cat)
+                .addToBackStack(null)
+                .commit();
+    }
+
+    private void moveordersfragment(boolean overlap, OrdersFragment cat) {
+        Slide slideTransition = new Slide(Gravity.RIGHT);
+        Slide slidetransition=new Slide(Gravity.START);
+        slideTransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
+
+        slidetransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
+
+
+        ChangeBounds changeBoundsTransition = new ChangeBounds();
+        //  changeBoundsTransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
+
+        cat.setEnterTransition(slideTransition);
+        cat.setAllowEnterTransitionOverlap(overlap);
+        cat.setExitTransition(slidetransition);
+        cat.setSharedElementEnterTransition(changeBoundsTransition);
+
+        getFragmentManager().beginTransaction()
+                .replace(R.id.Main, cat)
+                .addToBackStack(null)
+                .commit();
     }
 
     private void moveshopbycategory(boolean overlap) {
