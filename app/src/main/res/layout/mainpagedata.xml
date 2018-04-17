@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimary"
+
+        android:layout_height="50dp">
+        <android.support.v7.widget.CardView
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_margin="5dp"
+            app:cardCornerRadius="10dp"
+            android:id="@+id/category"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/shopbycategry"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent"
+                >
+                <TextView
+                    android:layout_margin="3dp"
+                    android:layout_width="match_parent"
+                    android:text="Shop by"
+                    android:textSize="10dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                     android:fontFamily="cursive"
+                    android:text="Category"
+                    android:textColor="@color/dark_grey" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <Button
+            style="@style/AppTheme.ButtonStyle"
+            android:id="@+id/seachitems"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="5dp"
+            android:drawableStart="@drawable/ic_search_black_24dp"
+            android:text="Search"
+            android:textAlignment="textStart"
+            android:layout_height="40dp" />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+        <android.support.v4.view.ViewPager
+            android:layout_width="match_parent"
+
+            android:id="@+id/Offers"
+            android:layout_height="150dp">
+        </android.support.v4.view.ViewPager>
+        <me.relex.circleindicator.CircleIndicator
+            android:id="@+id/indicator"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            app:ci_drawable="@drawable/next" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp">
+        <android.support.v4.view.ViewPager
+            android:layout_width="match_parent"
+
+            android:id="@+id/Mobilesoffers"
+            android:layout_height="150dp">
+        </android.support.v4.view.ViewPager>
+        <me.relex.circleindicator.CircleIndicator
+            android:id="@+id/indicator2"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            app:ci_drawable="@drawable/next" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp">
+        <android.support.v4.view.ViewPager
+            android:layout_width="match_parent"
+
+            android:id="@+id/featuredoffers"
+            android:layout_height="150dp">
+        </android.support.v4.view.ViewPager>
+        <me.relex.circleindicator.CircleIndicator
+            android:id="@+id/indicator3"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            app:ci_drawable="@drawable/next" />
+    </RelativeLayout>
+
+</LinearLayout>
+    </android.support.v7.widget.CardView>
+</ScrollView>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5sp"
+        android:text="@string/product_information"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout style="@style/AppTheme.tableborders">
+            <TextView
+                style="@style/AppTheme.Texttablestyle"
+                android:text="OS" />
+            <TextView
+                style="@style/AppTheme.tableConntents"
+                android:text="Android" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/AppTheme.tableborders">
+            <TextView
+                style="@style/AppTheme.Texttablestyle"
+                android:text="RAM" />
+            <TextView
+                style="@style/AppTheme.tableConntents"
+                android:text="4 GB" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/AppTheme.tableborders">
+            <TextView
+                style="@style/AppTheme.Texttablestyle"
+                android:text="Product Dimensions" />
+            <TextView
+                style="@style/AppTheme.tableConntents"
+                android:text="15.6 x 0.8 x 7.7 cm" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/AppTheme.tableborders">
+            <TextView
+                style="@style/AppTheme.Texttablestyle"
+                android:text="Item model number" />
+            <TextView
+                style="@style/AppTheme.tableConntents"
+                android:text="MI A1" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/AppTheme.tableborders">
+            <TextView
+                style="@style/AppTheme.Texttablestyle"
+                android:text="Wireless communication Technologies" />
+            <TextView
+                style="@style/AppTheme.tableConntents"
+                android:text="Bluetooth, WiFi Hotspot" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/AppTheme.tableborders">
+            <TextView
+                style="@style/AppTheme.Texttablestyle"
+                android:text="Connectivity technologies" />
+            <TextView
+
+                style="@style/AppTheme.tableConntents"
+                android:text="	GSM, 3G, UMTS, HSPA+, 4G LTE, GPRS, EDGE, WiFi" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/AppTheme.tableborders">
+            <TextView
+                style="@style/AppTheme.Texttablestyle"
+                android:text="Special features" />
+
+            <TextView
+               style="@style/AppTheme.tableConntents"
+                android:text="Dual SIM, GPS, Music Player, Video Player, FM Radio, Accelerometer, Proximity sensor, Ambient light sensor, E-mail" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/AppTheme.tableborders">
+            <TextView
+                style="@style/AppTheme.Texttablestyle"
+                android:text="Other Camera fratures" />
+            <TextView
+                style="@style/AppTheme.tableConntents"
+                android:text="13MP" />
+        </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/AppTheme.tableborders">
+                <TextView
+                    style="@style/AppTheme.Texttablestyle"
+                    android:text="Weight" />
+                <TextView
+                    style="@style/AppTheme.tableConntents"
+                    android:text="195 g" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/AppTheme.tableborders">
+                <TextView
+                    style="@style/AppTheme.Texttablestyle"
+                    android:text="Colour" />
+                <TextView
+                    style="@style/AppTheme.tableConntents"
+                    android:text="GOLD" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/AppTheme.tableborders">
+                <TextView
+                    style="@style/AppTheme.Texttablestyle"
+                    android:text="Battery Power Rating" />
+                <TextView
+                    style="@style/AppTheme.tableConntents"
+                    android:text="3000mah" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/AppTheme.tableborders">
+                <TextView
+                    style="@style/AppTheme.Texttablestyle"
+                    android:text="What is in the Box" />
+                <TextView
+                    style="@style/AppTheme.tableConntents"
+                    android:text="Handset, Quick Charger, Type-C Cable, Stereo Headphones and Startup Guide" />
+            </LinearLayout>
+
+            </LinearLayout>
+
+</LinearLayout>

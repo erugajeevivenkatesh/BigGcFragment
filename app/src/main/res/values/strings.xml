@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">BigGcFragment</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="specification">OS	Android
+RAM	4 GB
+Item Weight	163 g
+Product Dimensions	15.7 x 0.8 x 7.5 cm
+Batteries:	1 Lithium Polymer batteries required. (included)
+Item model number	BND-AL10
+Wireless communication technologies	Bluetooth, WiFi Hotspot
+Connectivity technologies	GSM, (1800/900 MHz), HSPA+, 3G, (2100/900 MHz), 4G, LTE, FDD, TDD, GPRS, EDGE, WiFi 802.11 b/g/n 2.4 GHz
+Special features	Dual SIM, GPS, Music Player, Video Player, E-mail
+Other camera features	8MP
+Form factor	Touchscreen Phone
+Weight	163 Grams
+Colour	Blue
+Battery Power Rating	3340
+Whats in the box	Handset, Charging Cable, Charging Adapter, PC Cover, SIM Ejecting Tool and Quick Start Guide</string>
+    <string name="Description">
+        16MP + 2MP dual primary camera and 8MP front facing camera
+15.06 centimeters (5.93-inch) capacitive touchscreen, FHD+ 18:9 display with 1080 x 2160 pixels resolution and 407 ppi pixel density
+Android v7.0 Nougat EMUI 5.1 operating system with 2.36GHz Kirin 659 octa core processor, Mali-T830 GPU, 4GB RAM, 32GB internal memory expandable up to 256GB and dual SIM (nano+nano) dual-standby (4G+4G)
+    </string>
+    <string name="Additionalinformation">
+        MADE IN INDIA
+    </string>
+    <string name="product_information">Product Information</string>
+</resources>

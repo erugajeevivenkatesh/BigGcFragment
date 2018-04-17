@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <LinearLayout
+
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/Speifications"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:context=".ActivityClass.MobileDetails">
+
+                <TextView
+                    android:id="@+id/Titleofmobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Mobile Title "
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/Mobileimagesss"
+                        android:layout_width="match_parent"
+
+                        android:layout_height="200dp"
+                        android:layout_margin="10dp">
+
+                    </android.support.v4.view.ViewPager>
+                    <me.relex.circleindicator.CircleIndicator
+                        android:id="@+id/indicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_alignParentBottom="true"
+                        app:ci_drawable="@drawable/next" />
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/Color"
+                    style="@style/AppTheme.layoutstyle"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Colour:" />
+
+                    <TextView
+
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Gold"
+
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3">
+
+                    </LinearLayout>
+
+                    <ImageView
+
+                        android:id="@+id/colorimage"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+
+                        android:layout_weight="1"
+                        />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:text=" ₹25666"
+                    android:textColor="#840014"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="Inclusive of all Taxes"
+                    android:textColor="#000000" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="Description"
+                            android:textColor="#000000"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/eText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginStart="5dp"
+
+                            android:maxLines="2"
+                            android:text="@string/Description" />
+
+                        <ImageButton
+                            android:id="@+id/expand"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30sp"
+                            android:layout_gravity="right|bottom"
+                            android:background="@android:color/transparent"
+                            android:padding="16dp"
+                            android:src="@drawable/expand" />
+
+                        <ImageButton
+                            android:id="@+id/collaps"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30sp"
+                            android:layout_gravity="right|bottom"
+                            android:background="@android:color/transparent"
+                            android:padding="16dp"
+                            android:src="@drawable/collaps"
+                            android:visibility="gone" />
+
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+
+                    android:layout_marginStart="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:text="Specifications"
+                            android:textColor="#000000"
+                            android:textSize="15dp" />
+                        <ImageButton
+                            android:id="@+id/specificatoncollaps"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30sp"
+                            android:layout_gravity="right"
+                            android:background="@android:color/transparent"
+                            android:padding="16dp"
+                            android:src="@drawable/collaps"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+
+                        <TextView
+                            android:id="@+id/Stext"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+
+                                                      android:maxLines="1"
+                            android:text="@string/specification" />
+
+                        <ImageButton
+                            android:id="@+id/specificatonexapnd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30sp"
+                            android:layout_gravity="end|bottom"
+                            android:background="@android:color/transparent"
+                            android:padding="16dp"
+                            android:src="@drawable/expand" />
+
+
+                        <include layout="@layout/productinformation"/>
+
+                            </LinearLayout>
+
+
+
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+
+                    android:layout_marginTop="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_margin="5dp"
+                            android:layout_width="match_parent"
+                            android:text="Manufactured In"
+                            android:textSize="15sp"
+                            android:textColor="#000000"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/MoreInfo"
+                            android:layout_marginStart="25dp"
+
+                            android:text="@string/Additionalinformation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/BUY"
+                    android:layout_margin="20dp"
+                    android:text="BUY NOW" />
+
+                <Button
+                    android:text="AddToCart"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/AddToCart" />
+
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+
+
