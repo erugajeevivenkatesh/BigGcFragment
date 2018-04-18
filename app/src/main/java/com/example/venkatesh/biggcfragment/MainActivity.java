@@ -1,6 +1,7 @@
 package com.example.venkatesh.biggcfragment;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.CardView;
@@ -21,6 +22,7 @@ import com.example.venkatesh.biggcfragment.Fragments.CategoryFragment;
 import com.example.venkatesh.biggcfragment.Fragments.Homefragment;
 import com.example.venkatesh.biggcfragment.Fragments.MobilesFragment;
 import com.example.venkatesh.biggcfragment.Fragments.OrdersFragment;
+import com.example.venkatesh.biggcfragment.Fragments.TodayDeals;
 import com.example.venkatesh.biggcfragment.Fragments.WishListFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -59,6 +61,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
@@ -102,12 +105,19 @@ public class MainActivity extends AppCompatActivity
         {
            moveshopbycategory(false);
         }
-        else if(id==R.id.yourorders)
+        else if (id==R.id.Todaydeals)
         {
+            Todaydealsfragment(false,new TodayDeals());
+        }
+        else if(id==R.id.yourorders)
+
+        {
+            OrdersFragment order=new OrdersFragment();
             moveordersfragment(false,new OrdersFragment());
         }
         else if(id==R.id.yourwisilist)
         {
+            WishListFragment wist=new WishListFragment();
             movewishlistfragment(false,new WishListFragment());
         }
 
@@ -174,7 +184,6 @@ public class MainActivity extends AppCompatActivity
 
         slidetransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
 
-
         ChangeBounds changeBoundsTransition = new ChangeBounds();
         //  changeBoundsTransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
 
@@ -211,6 +220,28 @@ public class MainActivity extends AppCompatActivity
 
         getFragmentManager().beginTransaction()
                 .replace(R.id.Main, sharedElementFragment2)
+                .commit();
+    }
+    private void Todaydealsfragment(boolean overlap, TodayDeals deals) {
+
+        Slide slideTransition = new Slide(Gravity.RIGHT);
+        Slide slidetransition=new Slide(Gravity.START);
+        slideTransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
+
+        slidetransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
+
+
+        ChangeBounds changeBoundsTransition = new ChangeBounds();
+          changeBoundsTransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
+
+        deals.setEnterTransition(slideTransition);
+        deals.setAllowEnterTransitionOverlap(overlap);
+        deals.setExitTransition(slidetransition);
+        deals.setSharedElementEnterTransition(changeBoundsTransition);
+
+        getFragmentManager().beginTransaction()
+                .replace(R.id.Main, deals)
+                .addToBackStack(null)
                 .commit();
     }
 }

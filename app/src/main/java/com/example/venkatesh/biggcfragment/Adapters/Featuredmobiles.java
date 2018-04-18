@@ -25,7 +25,7 @@ public class Featuredmobiles extends PagerAdapter {
             "https://www.permanad.se/wp-content/uploads/sites/4/2017/06/pixelxl_black.jpg",
             "https://www1-lw.xda-cdn.com/files/2018/01/GooglePay_Lockup.max-1000x1000.png"};
     //we have to set image size as 1920X820
-    Integer[] intes={R.drawable.featuredmobiles};
+    Integer[] intes={R.drawable.upcomming};
     @Override
     public int getCount() {
         return intes.length;
