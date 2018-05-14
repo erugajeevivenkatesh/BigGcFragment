@@ -1,12 +1,13 @@
 package com.example.venkatesh.biggcfragment;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.CardView;
 import android.transition.ChangeBounds;
 import android.transition.Slide;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -17,25 +18,44 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.venkatesh.biggcfragment.Fragments.CategoryFragment;
 import com.example.venkatesh.biggcfragment.Fragments.Homefragment;
-import com.example.venkatesh.biggcfragment.Fragments.MobilesFragment;
 import com.example.venkatesh.biggcfragment.Fragments.OrdersFragment;
 import com.example.venkatesh.biggcfragment.Fragments.TodayDeals;
 import com.example.venkatesh.biggcfragment.Fragments.WishListFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    public  boolean searchbutton;
 
+    TransistionofAllfragments transistionofAllfragments=new TransistionofAllfragments();
     CardView Category;
+    LinearLayout searchproduct;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        searchbutton=false;
         getSupportActionBar().setTitle("Nixinn");
+        LinearLayout notifcation=toolbar.findViewById(R.id.notification);
+         searchproduct=toolbar.findViewById(R.id.searchproducts);
+        searchproduct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),SearchItem.class));
+            }
+        });
+        notifcation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "no notifications", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -46,15 +66,13 @@ public class MainActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
-        addNextFragment(false);
+        transistionofAllfragments.Homefraagment(false,getFragmentManager());
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-        // Not overlaping the fragmentone
-        //addNextFragment( true);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
@@ -79,9 +97,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
 //        //noinspection SimplifiableIfStatement
@@ -99,26 +115,29 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         if(id==R.id.Home)
         {
-            addNextFragment(false);
+          Serachproductvisibility(false);
+           transistionofAllfragments.Homefraagment(false,getFragmentManager());
         }
         else if(id==R.id.shopbycategory)
         {
-           moveshopbycategory(false);
+            Serachproductvisibility(true);
+           transistionofAllfragments.Catogoryfragment(false,getFragmentManager());
         }
         else if (id==R.id.Todaydeals)
         {
-            Todaydealsfragment(false,new TodayDeals());
+            Serachproductvisibility(true);
+            transistionofAllfragments.Todaydealsfragment(false,getFragmentManager());
         }
         else if(id==R.id.yourorders)
 
         {
-            OrdersFragment order=new OrdersFragment();
-            moveordersfragment(false,new OrdersFragment());
+            Serachproductvisibility(true);
+            transistionofAllfragments.moveordersfragment(false,getFragmentManager());
         }
         else if(id==R.id.yourwisilist)
         {
-            WishListFragment wist=new WishListFragment();
-            movewishlistfragment(false,new WishListFragment());
+            Serachproductvisibility(true);
+            transistionofAllfragments.movewishlistfragment(false,getFragmentManager());
         }
 
         else if (id == R.id.nav_share) {
@@ -130,118 +149,30 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private void movewishlistfragment(boolean overlap, WishListFragment cat) {
-        Slide slideTransition = new Slide(Gravity.RIGHT);
-        Slide slidetransition=new Slide(Gravity.START);
-        slideTransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
+    public void Serachproductvisibility(boolean search)
+    {
+        if(search)
 
-        slidetransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
-
-
-        ChangeBounds changeBoundsTransition = new ChangeBounds();
-        //  changeBoundsTransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
-
-        cat.setEnterTransition(slideTransition);
-        cat.setAllowEnterTransitionOverlap(overlap);
-        cat.setExitTransition(slidetransition);
-        cat.setSharedElementEnterTransition(changeBoundsTransition);
-
-        getFragmentManager().beginTransaction()
-                .replace(R.id.Main, cat)
-                .addToBackStack(null)
-                .commit();
+        searchproduct.setVisibility(View.VISIBLE);
+        else
+        {
+            searchproduct.setVisibility(View.INVISIBLE);
+        }
     }
 
-    private void moveordersfragment(boolean overlap, OrdersFragment cat) {
-        Slide slideTransition = new Slide(Gravity.RIGHT);
-        Slide slidetransition=new Slide(Gravity.START);
-        slideTransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
+    @Override
+    protected void onResume() {
+        Log.v("searchbutton","false");
+        if(searchbutton)
+        {
+            Log.v("searchbutton","true");
+            Serachproductvisibility(true);
+        }
+        else
+        { Log.v("searchbutton","false");
+            Serachproductvisibility(false);
 
-        slidetransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
-
-
-        ChangeBounds changeBoundsTransition = new ChangeBounds();
-        //  changeBoundsTransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
-
-        cat.setEnterTransition(slideTransition);
-        cat.setAllowEnterTransitionOverlap(overlap);
-        cat.setExitTransition(slidetransition);
-        cat.setSharedElementEnterTransition(changeBoundsTransition);
-
-        getFragmentManager().beginTransaction()
-                .replace(R.id.Main, cat)
-                .addToBackStack(null)
-                .commit();
-    }
-
-    private void moveshopbycategory(boolean overlap) {
-        CategoryFragment cat=new CategoryFragment();
-
-
-        Slide slideTransition = new Slide(Gravity.RIGHT);
-        Slide slidetransition=new Slide(Gravity.START);
-        slideTransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
-
-        slidetransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
-
-        ChangeBounds changeBoundsTransition = new ChangeBounds();
-        //  changeBoundsTransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
-
-        cat.setEnterTransition(slideTransition);
-        cat.setAllowEnterTransitionOverlap(overlap);
-        cat.setExitTransition(slidetransition);
-        cat.setSharedElementEnterTransition(changeBoundsTransition);
-
-        getFragmentManager().beginTransaction()
-                .replace(R.id.Main, cat)
-                .addToBackStack(null)
-                .commit();
-
-    }
-
-    private void addNextFragment( boolean overlap) {
-
-        Homefragment sharedElementFragment2 = new Homefragment();
-
-        Slide slideTransition = new Slide(Gravity.RIGHT);
-        Slide slidetransition=new Slide(Gravity.START);
-        slideTransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
-
-        slidetransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
-
-
-        ChangeBounds changeBoundsTransition = new ChangeBounds();
-      //  changeBoundsTransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
-
-        sharedElementFragment2.setEnterTransition(slideTransition);
-        sharedElementFragment2.setAllowEnterTransitionOverlap(overlap);
-        sharedElementFragment2.setExitTransition(slidetransition);
-        sharedElementFragment2.setSharedElementEnterTransition(changeBoundsTransition);
-
-        getFragmentManager().beginTransaction()
-                .replace(R.id.Main, sharedElementFragment2)
-                .commit();
-    }
-    private void Todaydealsfragment(boolean overlap, TodayDeals deals) {
-
-        Slide slideTransition = new Slide(Gravity.RIGHT);
-        Slide slidetransition=new Slide(Gravity.START);
-        slideTransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
-
-        slidetransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
-
-
-        ChangeBounds changeBoundsTransition = new ChangeBounds();
-          changeBoundsTransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));
-
-        deals.setEnterTransition(slideTransition);
-        deals.setAllowEnterTransitionOverlap(overlap);
-        deals.setExitTransition(slidetransition);
-        deals.setSharedElementEnterTransition(changeBoundsTransition);
-
-        getFragmentManager().beginTransaction()
-                .replace(R.id.Main, deals)
-                .addToBackStack(null)
-                .commit();
+        }
+            super.onResume();
     }
 }

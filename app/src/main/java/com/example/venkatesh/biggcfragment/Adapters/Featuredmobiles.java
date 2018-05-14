@@ -53,7 +53,6 @@ public class Featuredmobiles extends PagerAdapter {
         offersimage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Toast.makeText(context,String.valueOf(position),Toast.LENGTH_SHORT).show();
             }
         });

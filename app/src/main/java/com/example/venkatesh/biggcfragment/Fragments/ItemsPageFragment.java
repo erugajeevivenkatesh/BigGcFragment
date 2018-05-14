@@ -14,7 +14,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -104,7 +103,7 @@ public class ItemsPageFragment extends Fragment{
         mobilelists.add(mobilesInfo);
     }
     private void addNextFragment( boolean overlap) {
-        MobilesFragment sharedElementFragment2 = new MobilesFragment();
+        ProductDetailsFragment sharedElementFragment2 = new ProductDetailsFragment();
        // sharedElementFragment2.setArguments(b);
         Slide slideTransition = new Slide(Gravity.END);
         slideTransition.setDuration(getResources().getInteger(R.integer.anim_duration_medium));

@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import com.example.venkatesh.biggcfragment.Adapters.ViewpageAdapter;
 import com.example.venkatesh.biggcfragment.R;
 
-public class MobilesFragment extends Fragment {
+public class ProductDetailsFragment extends Fragment {
     ViewPager ImagesPager;
     @Nullable
     @Override
